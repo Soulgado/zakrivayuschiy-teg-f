@@ -17,4 +17,335 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--main-background-color);
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--main-font-weight);
+  font-size: 18px;
+  color: var(--accent-color);
+}
+
+.header {
+  width: clamp(375px, 70vw, 700px);
+  margin: 102px auto;
+  border: 2px solid var(--accent-color);
+  background-color: var(--main-background-color);
+  font-family: var(--accent-font), sans-serif;
+  text-align: center;
+}
+
+.header__title-decoration {
+  margin-inline-start: clamp(14px, 10%, 120.5px);
+  margin-inline-end: clamp(14px, 10%, 120.5px);
+  margin-block-start: 120px;
+  margin-block-end: 20px;
+  font-size: clamp(2.722rem, 2.409rem + 1.502vw, 3.611rem);;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1440px) {
+  .header__title-decoration {
+    margin-block-start: 136px;
+  }
+}
+
+.header__title {
+  margin-block-end: 25px;
+  font-size: clamp(0.778rem, 0.602rem + 0.845vw, 1.278rem);
+}
+
+.header__theme-menu {
+  width: 84px;
+  margin: 0 auto;
+  margin-block-end: 25px;
+  font-size: 14px;
+}
+
+.theme-menu__list {
+  list-style: none;
+  text-align: left;
+}
+
+.theme-menu__item {
+  margin-block-end: 14px;
+}
+
+.theme-menu__item:last-child {
+  margin-block-end: 0;
+}
+
+.theme-menu__button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled:before {
+  content: "▶";
+  width: 16px;
+  height: 13px;
+  position: absolute;
+  left: -13px;
+  animation: arrow 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible:before {
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 8px;
+  content: "";
+  width: 85%;
+  height: 2px;
+  background-color: var(--accent-color);
+  animation: underline 0.3s ease;
+}
+
+@keyframes arrow {
+  from {
+    left: -13px
+  }
+
+  to {
+    left: -17px;
+  }
+}
+
+@keyframes underline {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+.main {
+  text-align: center;
+}
+
+.card {
+  display: grid;
+  width: 100%;
+  max-width: 696px;
+  margin: 0 auto;
+  margin-block-end: 50px;
+  text-align: left;
+  border: 2px solid var(--accent-color);
+  background-color: var(--main-background-color);
+}
+
+.card__title {
+  padding: 4px 10px 6px 10px;
+  font-size: 18px;
+  font-weight: var(--accent-font-weight);
+  line-height: 21.78px;
+  text-align: left;
+}
+
+.card__image-wrapper {
+  position: relative;
+}
+
+.card__image-text {
+  position: absolute;
+  right: 13px;
+  top: 25px;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  background-blend-mode: hard-light;
+  opacity: 0.5;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--main-background-color);
+}
+
+.card__image {
+  width: 100%;
+  border: 2px solid var(--accent-color);
+}
+
+.card__text {
+  margin: 25px 27px 25px 25px;
+}
+
+.card__text:last-child {
+  margin-block-end: 25px;
+}
+
+.button {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  font-weight: var(--main-font-weight);
+  line-height: 12.6px;
+  border: 2px solid var(--accent-color);
+}
+
+.card__icon-button {
+  background: transparent;
+  border: none;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+}
+
+.card__like-button-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-self: end;
+  margin-inline-end: 25px;
+  margin-block-end: 25px;
+} 
+
+.card__like-button {
+  display: block;
+  width: 130px;
+  height: 38px;
+  margin-inline-start: 12px;
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.button__text {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 12.6px;
+  position: relative;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+@keyframes buttonCover {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.card__like-button:hover:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  animation: buttonCover 0.5s ease-in-out;
+}
+
+.save-button {
+  width: 100%;
+  max-width: 335px;
+  display: inline-block;
+  margin: 0 34.5px 100px 34.5px;
+  padding: 15px 20.5px 15px 19.5px;
+  background: var(--main-background-color);
+  text-align: center;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  transition: fill 0.3s ease 0.05s;
+}
+
+.main-body {
+  transition: fill 0.3s ease;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--accent-color);
+  transition: fill 0.5s ease;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill 0.3s ease 0.05s; 
+}
+
+.card__icon-button:active .core {
+  fill: #FF0000;
+  transition: fill 0.5s ease;
+}
+
+.card__icon-button:active .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s ease 0.05s; 
+}
+
+.like-icon.is-liked .core {
+  fill: #FF0000;
+  transition: fill 0.3s ease;
+}
+
+.llke-icon.is-liked .main-body {
+  fill: #FF0000;
+  transition: fill 0.3s ease 0.05s; 
+}
+
+.llke-icon.is-liked .contour {
+  fill: #FF0000;
+  transition: fill 0.3s ease 0.06s; 
+}
+
+.like-icon.is-liked .heart {
+  animation: 0.3s ease-in 0.1s 1 alternate heartPound;
+  transform-origin: center;
+}
+
+@keyframes heartPound {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
 }
