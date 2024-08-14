@@ -100,7 +100,6 @@
   height: 13px;
   position: absolute;
   left: -13px;
-  animation: arrow 0.5s ease-in-out infinite alternate;
 }
 
 .theme-menu__button:focus {
@@ -122,27 +121,6 @@
   width: 85%;
   height: 2px;
   background-color: var(--accent-color);
-  animation: underline 0.3s ease;
-}
-
-@keyframes arrow {
-  from {
-    left: -13px
-  }
-
-  to {
-    left: -17px;
-  }
-}
-
-@keyframes underline {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 85%;
-  }
 }
 
 .main {
@@ -256,16 +234,6 @@
   mix-blend-mode: difference;
 }
 
-@keyframes buttonCover {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
 .card__like-button:hover:before {
   content: "";
   display: block;
@@ -275,7 +243,6 @@
   top: 0;
   left: 0;
   background-color: black;
-  animation: buttonCover 0.5s ease-in-out;
 }
 
 .save-button {
@@ -288,64 +255,38 @@
   text-align: center;
 }
 
-.sparks {
-  opacity: 0;
+dialog {
+  position: fixed;
+  inset: 0;
+  width: clamp(341px, 90%, 357px);
+  height: 191px;
+  padding: 30px 40px 30px 40px;
+  font-family: 'PressStart2P', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-.core {
-  transition: fill 0.3s ease 0.05s;
+dialog[open] {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  row-gap: 30px;
+  column-gap: 20px;
+  align-items: center;
 }
 
-.main-body {
-  transition: fill 0.3s ease;
+::backdrop {
+  background-color: black;
+  opacity: 0.75;
+} 
+
+.dialog-button {
+  width: 100%;
+  height: 38px;
+  padding: 9px 17px;
+  grid-column: span 2;
 }
 
-.card__icon-button:hover .core {
-  fill: var(--accent-color);
-  transition: fill 0.5s ease;
+.dialog-floppy-icon {
+  scale: 1.4;
 }
 
-.card__icon-button:hover .main-body {
-  fill: var(--accent-color);
-  transition: fill 0.3s ease 0.05s; 
-}
-
-.card__icon-button:active .core {
-  fill: #FF0000;
-  transition: fill 0.5s ease;
-}
-
-.card__icon-button:active .main-body {
-  fill: #FF0000;
-  transition: fill 0.3s ease 0.05s; 
-}
-
-.like-icon.is-liked .core {
-  fill: #FF0000;
-  transition: fill 0.3s ease;
-}
-
-.llke-icon.is-liked .main-body {
-  fill: #FF0000;
-  transition: fill 0.3s ease 0.05s; 
-}
-
-.llke-icon.is-liked .contour {
-  fill: #FF0000;
-  transition: fill 0.3s ease 0.06s; 
-}
-
-.like-icon.is-liked .heart {
-  animation: 0.3s ease-in 0.1s 1 alternate heartPound;
-  transform-origin: center;
-}
-
-@keyframes heartPound {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.5);
-  }
-}
