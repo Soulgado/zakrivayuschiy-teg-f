@@ -161,7 +161,12 @@
   background-blend-mode: hard-light;
   opacity: 0.5;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px var(--main-background-color);
+}
+
+@supports (-webkit-text-stroke: 1px) {
+  .card__image-text {
+    -webkit-text-stroke: 1px var(--main-background-color);
+  }
 }
 
 .card__image {
@@ -181,7 +186,7 @@
   margin: 0 25px 27px 25px;
 }
 
-.card__text:last-of-type {    
+.card__text:last-of-type {
   margin-block-end: 25px;
 }
 

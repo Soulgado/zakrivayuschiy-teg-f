@@ -45,10 +45,6 @@
   animation: buttonCover 0.5s ease-in-out;
 }
 
-.card__like-button:hover:before {
-  animation: buttonCover 0.5s ease-in-out;
-}
-
 @keyframes buttonCover {
   from {
     width: 0%;
