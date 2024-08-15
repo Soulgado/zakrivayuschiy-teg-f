@@ -41,7 +41,7 @@
   margin-inline-end: clamp(14px, 10%, 120.5px);
   margin-block-start: 120px;
   margin-block-end: 20px;
-  font-size: clamp(2.722rem, 2.409rem + 1.502vw, 3.611rem);;
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   text-transform: uppercase;
 }
 
@@ -53,13 +53,13 @@
 
 .header__title {
   margin-block-end: 25px;
-  font-size: clamp(0.778rem, 0.602rem + 0.845vw, 1.278rem);
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
 }
 
 .header__theme-menu {
   width: 84px;
   margin: 0 auto;
-  margin-block-end: 25px;
+  margin-block-end: 22px;
   font-size: 14px;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .theme-menu__item {
-  margin-block-end: 14px;
+  margin-block-end: 12px;
 }
 
 .theme-menu__item:last-child {
@@ -79,6 +79,8 @@
 .theme-menu__button {
   background: none;
   border: none;
+  font-size: 14px;
+  line-height: 14px;
   text-transform: uppercase;
   position: relative;
   transition: opacity 0.3s ease;
@@ -152,7 +154,7 @@
 
 .card__image-text {
   position: absolute;
-  right: 13px;
+  right: 22px;
   top: 25px;
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
@@ -164,14 +166,22 @@
 
 .card__image {
   width: 100%;
-  border: 2px solid var(--accent-color);
+  height: 100%;
+  border: 1px solid var(--accent-color);
+  border-right: none;
+  border-left: none;
+}
+
+.card__text:first-of-type {
+  margin-block-start: 25px;
 }
 
 .card__text {
-  margin: 25px 27px 25px 25px;
+  letter-spacing: 0.5px;
+  margin: 0 25px 27px 25px;
 }
 
-.card__text:last-child {
+.card__text:last-of-type {    
   margin-block-end: 25px;
 }
 
@@ -202,14 +212,13 @@
   align-items: center;
   justify-self: end;
   margin-inline-end: 25px;
-  margin-block-end: 25px;
+  margin-block-end: 20px;
 } 
 
 .card__like-button {
   display: block;
   width: 130px;
   height: 38px;
-  margin-inline-start: 12px;
   border: 2px solid var(--accent-color);
   background: transparent;
   transition: box-shadow 0.3s ease;
@@ -248,9 +257,11 @@
 .save-button {
   width: 100%;
   max-width: 335px;
-  display: inline-block;
-  margin: 0 34.5px 100px 34.5px;
-  padding: 15px 20.5px 15px 19.5px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  margin: 0 auto 100px auto;
+  padding: 15px 18px 15px 18px;
   background: var(--main-background-color);
   text-align: center;
 }
@@ -289,4 +300,33 @@ dialog[open] {
 .dialog-floppy-icon {
   scale: 1.4;
 }
+
+.brighter-image {
+  filter: brightness(140%);
+}
+
+.contrast-image {
+  filter: contrast(150%);
+}
+
+.darker-image {
+  filter: brightness(50%);
+}
+
+.less-contrast-image {
+  filter: contrast(50%);
+}
+
+.saturated-image {
+  filter: saturate(150%);
+};
+
+.sepia-image {
+  filter: sepia(80%);
+}
+
+.brighter-sepia-image {
+  filter: brightness(150%) sepia(80%);
+}
+
 
