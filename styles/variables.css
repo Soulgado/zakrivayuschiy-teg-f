@@ -6,8 +6,9 @@
 	--accent-font-weight: 700;
 	--main-background-color: #FFFFFF;
 	--accent-color: #000000;
-	--background-image: repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 4px),
-			repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 2px, transparent 4px),
-			linear-gradient(#e7e7e7, #e7e7e7 0.01%, #1a1a1a 100%);
+	--accent-font-color: #FFFFFF;
+	--background-image: repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+		repeating-linear-gradient(0deg, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+		linear-gradient(#e7e7e7, #e7e7e7 0.01%, #1a1a1a 100%);
 	--sparks-color: #FF0000;
 }

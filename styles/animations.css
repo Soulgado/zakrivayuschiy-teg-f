@@ -27,7 +27,7 @@
 	}
 }
 
-.theme-menu__button:focus-visible:before {
+/* .theme-menu__button:focus-visible:before {
   animation: underline 0.3s ease;
 }
 
@@ -39,9 +39,9 @@
   to {
     width: 85%;
   }
-}
+} */
 
-.card__like-button:hover:before {
+.button:hover:before {
   animation: buttonCover 0.5s ease-in-out;
 }
 
