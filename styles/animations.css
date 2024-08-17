@@ -19,40 +19,12 @@
 
 @keyframes arrow {
 	from {
-		left: -13px
+		left: -16px
 	}
 
 	to {
-		left: -17px;
+		left: -20px;
 	}
-}
-
-/* .theme-menu__button:focus-visible:before {
-  animation: underline 0.3s ease;
-}
-
-@keyframes underline {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 85%;
-  }
-} */
-
-.button:hover:before {
-  animation: buttonCover 0.5s ease-in-out;
-}
-
-@keyframes buttonCover {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
 }
 
 .sparks {
@@ -61,32 +33,32 @@
 
 .core {
   fill: transparent;
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear;
 }
 
 .contour {
   fill: var(--accent-color);
-  transition: fill 0.3s linear 0.06s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .core {
   fill: var(--accent-color);
-  transition: fill 0.5s linear 0.03s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--accent-color);
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:active .core {
   fill: #FF0000;
-  transition: fill 0.5s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
@@ -96,17 +68,17 @@
 
 .like-icon.is-liked .main-body {
   fill: #FF0000;
-  transition: fill 0.1s linear;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: #FF0000;
-  transition: fill 0.1s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: #FF0000;
-  transition: fill 0.1s linear;
+  transition: fill 0.3s linear 0.06s;
 }
 
 .like-icon.is-liked .heart {

@@ -32,7 +32,7 @@
   margin: 102px auto;
   border: 2px solid var(--accent-color);
   background-color: var(--main-background-color);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font),  fantasy;
   text-align: center;
   text-transform: uppercase;
 }
@@ -62,6 +62,7 @@
 }
 
 .theme-menu__list {
+  margin-inline-start: 7px;
   list-style: none;
   text-align: left;
 }
@@ -75,6 +76,7 @@
 }
 
 .theme-menu__button {
+  padding: 0;
   background: none;
   border: none;
   font-size: 14px;
@@ -112,20 +114,22 @@
   opacity: 0.6;
 }
 
-.theme-menu__button:after {
-  transition: scale 0.3s ease;
-}
-
-.theme-menu__button:focus-visible::after {
+.theme-menu__button::after {
   display: block;
   position: absolute;
   bottom: -2px;
-  left: 8px;
+  left: 0px;
   content: "";
-  width: 85%;
+  width: 100%;
   height: 2px;
   background-color: var(--accent-color);
-  transition: scale 0.3s ease;
+  transform-origin: left;
+  scale: 0;
+  transition: scale 0.3s ease 0.01s;
+}
+
+.theme-menu__button:focus-visible::after {
+  transition: scale 0.3s ease 0.01s;
   scale: 1;
 }
 
@@ -135,7 +139,7 @@
 
 .card {
   display: grid;
-  width: 100%;
+  width: clamp(375px, 70vw, 700px);
   max-width: 696px;
   margin: 0 auto;
   margin-block-end: 50px;
@@ -160,7 +164,7 @@
   position: absolute;
   right: 22px;
   top: 25px;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font),  fantasy;
   font-size: 14px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
@@ -189,7 +193,6 @@
 }
 
 .card__text {
-  letter-spacing: 0.5px;
   margin: 0 25px 27px 25px;
   font-variation-settings: "wght" var(--main-font-weight);
 }
@@ -218,21 +221,29 @@
   box-shadow: 2px 2px var(--accent-color);
 }
 
-.button:hover:before {
+.button:before {
   content: "";
   display: block;
-  width: 100%;
+  width: 0%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--accent-color);
+  transition: width 0.5s ease-in-out;
+}
+
+.button:hover:before {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 .card__icon-button {
   display: flex;
+  padding: 0;
   background: transparent;
   border: none;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:hover {
@@ -245,6 +256,7 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
+  transition: all 0.3s ease;
 }
 
 .card__like-button-wrapper {
@@ -259,21 +271,23 @@
 .card__like-button {
   display: block;
   width: 130px;
-  height: 40px;
+  height: 41px;
   position: relative;
+  margin-inline-start: 3px;
 }
 
 .button__text {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 12.6px;
   position: relative;
   mix-blend-mode: difference;
   color: var(--accent-font-color);
+  transition: all 0.3s ease;
 }
 
 .floppy-icon {
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
 
 .save-button {
@@ -292,9 +306,8 @@ dialog {
   position: fixed;
   inset: 0;
   width: clamp(341px, 90%, 357px);
-  height: 191px;
   padding: 30px 40px 30px 40px;
-  font-family: 'PressStart2P', sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   text-transform: uppercase;
   background-color: var(--main-background-color);
@@ -323,7 +336,6 @@ dialog[open] {
 
 .save-floppy-icon {
   color: var(--accent-font-color);
-  fill: var(--accent-font-color);
   mix-blend-mode: difference;
 }
 
