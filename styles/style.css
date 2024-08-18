@@ -128,7 +128,6 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  transition: scale 0.3s ease 0.01s;
   scale: 1;
 }
 
@@ -161,7 +160,7 @@
 
 .card__image-text {
   position: absolute;
-  right: 22px;
+  right: clamp(10px, 1.5vw, 22px);
   top: 25px;
   font-family: var(--accent-font),  fantasy;
   font-size: 14px;
@@ -174,6 +173,7 @@
 @supports (-webkit-text-stroke: 1px) {
   .card__image-text {
     -webkit-text-stroke: 1px var(--main-background-color);
+    text-shadow: none;
   }
 }
 
@@ -192,12 +192,19 @@
 }
 
 .card__text {
-  margin: 0 25px 27px 25px;
+  margin: 0 26px 27px 25px;
   font-variation-settings: "wght" var(--main-font-weight);
+  line-height: 21px;
 }
 
 .card__text:last-of-type {
-  margin-block-end: 25px;
+  margin-block-end: 23px;
+}
+
+@media (min-width: 376px) {
+  .card__text:last-of-type {
+    margin-block-end: 27px;
+  }
 }
 
 .button {
@@ -233,7 +240,6 @@
 
 .button:hover:before {
   width: 100%;
-  transition: width 0.5s ease-in-out;
 }
 
 .card__icon-button {
@@ -254,7 +260,6 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color);
-  transition: border 0.3s ease;
 }
 
 .card__like-button-wrapper {
@@ -263,15 +268,15 @@
   align-items: center;
   justify-self: end;
   margin-inline-end: 25px;
-  margin-block-end: 20px;
+  margin-block-end: 25px;
 } 
 
 .card__like-button {
   display: block;
   width: 130px;
-  height: 41px;
+  height: 38px;
   position: relative;
-  margin-inline-start: 3px;
+  margin-inline-start: 4px;
 }
 
 .button__text {
@@ -298,6 +303,22 @@
   padding: 15px 18px 15px 18px;
   background-color: var(--main-background-color);
   text-align: center;
+}
+
+@media (max-width: 376px) {
+  .save-button {
+    width: 306px;
+    min-width: 306px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+  }
+
+  .save-floppy-icon {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 dialog {
@@ -330,6 +351,10 @@ dialog[open] {
   height: 38px;
   padding: 9px 17px;
   grid-column: span 2;
+}
+
+.dialog__text {
+  line-height: 21px;
 }
 
 .save-floppy-icon {
